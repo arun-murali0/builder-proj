@@ -1,7 +1,8 @@
-import express from "express";
+// this is the entry point of the application
 
-const app = express();
+import { app } from "./app";
+import { CONFIG } from "./config";
 
-app.listen(3000, () => {
+app.listen(CONFIG.PORT, () => {
   console.log("server running......");
 });
