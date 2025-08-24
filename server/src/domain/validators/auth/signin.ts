@@ -13,5 +13,10 @@ export const signinSchema = z.object({
         /[!@#$%^&*(),.?":{}|<>]/,
         "Password must contain at least one special character",
       ),
+    role: z.enum(["user", "admin"]).optional(),
+    createdAt: z.date().optional(),
+    updatedAt: z.date().optional(),
   }),
 });
+
+export type SigninInput = z.infer<typeof signinSchema>;

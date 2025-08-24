@@ -12,12 +12,24 @@ const HTTPCONFIG = {
   UNPROCESSABLE_ENTITY: 422,
   TOO_MANY_REQUESTS: 429,
 
+  THIRD_PARTY_ERROR: 502,
   SERVICE_UNAVAILABLE: 503,
   GATEWAY_TIMEOUT: 504,
 };
 
 const CUSTOMCONFIG = {
   DUPLICATE_KEY: "Already Exists",
+  VALIDATION_ERROR: "Validation Error",
+  CAST_ERROR: "Invalid ID",
+  NOT_FOUND: "Not Found",
+  UNAUTHORIZED: "Unauthorized",
+  FORBIDDEN: "Forbidden",
+  BAD_REQUEST: "Bad Request",
+  INTERNAL_SERVER_ERROR: "Internal Server Error",
+  CONFLICT: "Conflict",
+  TOO_MANY_REQUESTS: "Too Many Requests",
+  SERVICE_UNAVAILABLE: "Service Unavailable",
+  GATEWAY_TIMEOUT: "Gateway Timeout",
 };
 
 export { HTTPCONFIG, CUSTOMCONFIG };
