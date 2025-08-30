@@ -2,26 +2,26 @@ import { router, publicProcedure } from "../trpcInit";
 import {
   signinSchema,
   signupSchema,
-  SigninInput,
+  SignInInput,
   SignupInput,
 } from "../../../domain/validators";
 
 import { userController } from "../controllers/auth/userController";
 
-export const authRouter = () =>
-  router({
-    signup: publicProcedure
-      .input(signupSchema)
-      .mutation(({ input }) => userController.newUser(input as SignupInput)),
-    login: publicProcedure
-      .input(signinSchema)
-      .mutation(({ input }) => userController.userLogin(input as SigninInput)),
-    // logout: publicProcedure.input().mutation(({ input }) => {}),
-    // refreshToken: publicProcedure.input().mutation(({ input }) => {}),
-    // forgotPassword: publicProcedure.input().mutation(({ input }) => {}),
-    // resetPassword: publicProcedure.input().mutation(({ input }) => {}),
-    // verifyEmail: publicProcedure.input().mutation(({ input }) => {}),
-    // resendVerificationEmail: publicProcedure
-    //   .input()
-    //   .mutation(({ input }) => {}),
-  });
+export const authRouter = router({
+  home: publicProcedure.query(() => "Welcome to TRPC"),
+  signup: publicProcedure
+    .input(signupSchema)
+    .mutation(({ input }) => userController.newUser(input as SignupInput)),
+  login: publicProcedure
+    .input(signinSchema)
+    .mutation(({ input }) => userController.userLogin(input as SignInInput)),
+  // logout: publicProcedure.input().mutation(({ input }) => {}),
+  // refreshToken: publicProcedure.input().mutation(({ input }) => {}),
+  // forgotPassword: publicProcedure.input().mutation(({ input }) => {}),
+  // resetPassword: publicProcedure.input().mutation(({ input }) => {}),
+  // verifyEmail: publicProcedure.input().mutation(({ input }) => {}),
+  // resendVerificationEmail: publicProcedure
+  //   .input()
+  //   .mutation(({ input }) => {}),
+});

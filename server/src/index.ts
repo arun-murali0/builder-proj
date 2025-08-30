@@ -4,5 +4,5 @@ import { app } from "./app";
 import { CONFIG } from "./config";
 
 app.listen(CONFIG.PORT, () => {
-  console.log("server running......");
+  console.log(`server running in http://localhost:${CONFIG.PORT}`);
 });

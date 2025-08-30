@@ -1,43 +1,37 @@
-type UserRole = "user" | "admin";
+type userRole = "user" | "admin";
+export type SafeUser = Omit<UserEntity, "password">;
 
-export class UserEntity {
-  public id: string;
-  public name: string;
-  public email: string;
-  public password: string;
-  public role: UserRole;
-  public createdAt: Date;
-  public updatedAt: Date;
+export type UserEntity = {
+  id?: string;
+  name: string;
+  email: string;
+  password: string;
+  role?: userRole;
+  createdAt?: Date;
+  updatedAt?: Date;
+};
 
-  constructor(props: {
-    id: string;
-    name: string;
-    email: string;
-    password: string;
-    role?: UserRole;
-    createdAt?: Date;
-    updatedAt?: Date;
-  }) {
-    this.id = props.id;
-    this.name = props.name;
-    this.email = props.email;
-    this.password = props.password;
-    this.role = props.role || "user";
-    this.createdAt = props.createdAt || new Date();
-    this.updatedAt = props.updatedAt || new Date();
-  }
+export const createUser = (
+  props: Omit<UserEntity, "id" | "createdAt" | "updatedAt" | "role">,
+): UserEntity => {
+  return {
+    id: crypto.randomUUID(),
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    role: "user",
+    ...props,
+  };
+};
 
-  // Business rule: check if user is admin
-  isAdmin(): boolean {
-    return this.role === "admin";
-  }
+export const sanitizeUser = (user: UserEntity): SafeUser => {
+  const { password, ...sanitizedUser } = user;
+  return sanitizedUser;
+};
 
-  // Example: update password with validation
-  updatePassword(newPassword: string) {
-    if (newPassword.length < 8) {
-      throw new Error("Password too short");
-    }
-    this.password = newPassword;
-    this.updatedAt = new Date();
-  }
-}
+export const authenticateUser = (
+  user: UserEntity,
+  password: string,
+): Boolean => {
+  const checkPassword = user.password === password;
+  return checkPassword;
+};
