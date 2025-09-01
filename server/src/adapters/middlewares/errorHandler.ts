@@ -1,5 +1,5 @@
 import { ErrorRequestHandler } from "express";
-import { AppError } from "../../../utils/error";
+import { AppError } from "../../utils/error";
 
 const errorHandler: ErrorRequestHandler = (error, req, res, next): any => {
   if (error instanceof AppError) {
