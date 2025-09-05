@@ -8,8 +8,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="max-h-screen max-w-screen overflow-x-hidden bg-gray-100">
-        <div className="h-screen flex justify-center items-center">
+      <body className="max-h-screen max-w-screen overflow-x-hidden ">
+        <div className="h-screen flex justify-center items-center flex-col">
           {children}
         </div>
       </body>

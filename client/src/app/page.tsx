@@ -1,17 +1,13 @@
-"use client";
-// this is home page
+import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
-
-export default function page() {
-  const handleClick = () => {
-    alert("button clicked....");
-  };
-
+const page = () => {
   return (
-    <h1>
-      <p>Home page</p>
-      <Button onClick={() => handleClick()}>click me</Button>
-    </h1>
+    <>
+      <h1>Home Page</h1>
+      <Link href={"/login"}>Login</Link>
+      <Link href={"/register"}>register</Link>
+    </>
   );
-}
+};
+
+export default page;
