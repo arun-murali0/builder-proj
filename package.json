@@ -2,6 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "packageManager": "pnpm@10.14.0",
   "workspaces": [
     "server",
@@ -13,10 +14,28 @@
     "dev": "pnpm run dev:backend & pnpm run dev:client",
     "build": "tsc -b",
     "build:backend": "tsc -b backend",
-    "build:client": "tsc -b client"
+    "build:client": "tsc -b client",
+    "prepare": "husky install",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "format": "prettier --write ."
   },
   "devDependencies": {
-    "typescript": "^5.5.0",
-    "ts-node": "^10.9.2"
+    "@eslint/js": "^9.35.0",
+    "@typescript-eslint/eslint-plugin": "^8.42.0",
+    "@typescript-eslint/parser": "^8.42.0",
+    "eslint": "^9.35.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "husky": "^8.0.0",
+    "lint-staged": "^16.1.6",
+    "prettier": "^3.6.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,json,css,md}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   }
 }

@@ -1,3 +1,7 @@
-import Express from "express"
+import Express from 'express';
 
-export const app = Express();
+export const createapp = () => {
+  const app = Express();
+
+  return app;
+};

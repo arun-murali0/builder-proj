@@ -1,4 +1,4 @@
-import { getEnv } from "../shared/utils/loadenv";
+import { getEnv } from "../../shared/utils/loadenv";
 
 const CONFIG = {
   PORT: getEnv("PORT", "3000"),

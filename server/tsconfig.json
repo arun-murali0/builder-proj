@@ -3,7 +3,7 @@
     "experimentalDecorators": true,
     "target": "es2017",
     "module": "commonjs",
-    "jsx": "react-native",
+    "jsx": "preserve",
     "lib": ["es6", "esnext.asynciterable", "es2017"],
     "strict": true,
     "esModuleInterop": true,
@@ -16,6 +16,15 @@
     "noUnusedLocals": true,
     "skipLibCheck": true,
     "baseUrl": ".",
+
+    "paths": {
+      "@/*": ["src/*"],
+      "@domain/*": ["src/domain/*"],
+"@infrastructure/*": ["src/infrastructure/*"],
+      "@application/*": ["src/application/*"],
+      "@interface/*": ["src/interface/*"]
+    },
+
     "allowSyntheticDefaultImports": true,
     "removeComments": true,
     "outDir": "dist"
