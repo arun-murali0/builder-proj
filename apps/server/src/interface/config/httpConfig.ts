@@ -1,0 +1,33 @@
+export const HTTPCONFIG = {
+  NOT_FOUND: 404,
+  INTERNAL_SERVER_ERROR: 500,
+  BAD_REQUEST: 400,
+  UNAUTHORIZED: 401,
+  FORBIDDEN: 403,
+  OK: 200,
+  CREATED: 201,
+  NO_CONTENT: 204,
+
+  CONFLICT: 409,
+  UNPROCESSABLE_ENTITY: 422,
+  TOO_MANY_REQUESTS: 429,
+
+  THIRD_PARTY_ERROR: 502,
+  SERVICE_UNAVAILABLE: 503,
+  GATEWAY_TIMEOUT: 504,
+};
+
+export const CUSTOMCONFIG = {
+  DUPLICATE_KEY: 'Already Exists',
+  VALIDATION_ERROR: 'Validation Error',
+  CAST_ERROR: 'Invalid ID',
+  NOT_FOUND: 'Not Found',
+  UNAUTHORIZED: 'Unauthorized',
+  FORBIDDEN: 'Forbidden',
+  BAD_REQUEST: 'Bad Request',
+  INTERNAL_SERVER_ERROR: 'Internal Server Error',
+  CONFLICT: 'Conflict',
+  TOO_MANY_REQUESTS: 'Too Many Requests',
+  SERVICE_UNAVAILABLE: 'Service Unavailable',
+  GATEWAY_TIMEOUT: 'Gateway Timeout',
+};
