@@ -1,7 +1,7 @@
-import { signInSchema, signUpSchema } from '../../../application/validation';
-import { container } from '../../../infrastruture/containers';
+import { signInSchema, signUpSchema } from "@/application/validation";
+import { container } from "@/infrastruture/containers";
 
-import { router, procedure } from '../../../infrastruture/lib/trpc';
+import { router, procedure } from "@/infrastruture/lib/trpc";
 
 const userRouter = router({
   signIn: procedure.input(signInSchema).mutation(() => {

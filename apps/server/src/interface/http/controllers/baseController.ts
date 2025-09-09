@@ -1,4 +1,4 @@
-import { IUseCase } from '../../../application/ports/iuseCase';
+import { IUseCase } from "@/application/ports/iuseCase";
 
 export abstract class BaseController<
   TInput,
@@ -12,7 +12,7 @@ export abstract class BaseController<
       return await this.useCase.execute(input);
     } catch (err) {
       if (err instanceof Error) throw err;
-      throw new Error('Unknown error occurred');
+      throw new Error("Unknown error occurred");
     }
   }
 }

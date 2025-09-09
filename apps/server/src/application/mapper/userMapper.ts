@@ -1,8 +1,10 @@
-import { IMapper } from '../ports/iuseCase';
-import { User } from '../../domain/entities/user';
-import { signUpInputDTO, signUpOutputDTO } from '../DTO';
+import { IMapper } from "@/application/ports/iuseCase";
+import { User } from "@/domain/entities/user";
+import { signUpInputDTO, signUpOutputDTO } from "@/application/DTO";
 
-export class UserMapper implements IMapper<User, signUpInputDTO, signUpOutputDTO> {
+export class UserMapper
+  implements IMapper<User, signUpInputDTO, signUpOutputDTO>
+{
   toEntity(dto: signUpInputDTO): User {
     return new User({
       firstName: dto.firstName,

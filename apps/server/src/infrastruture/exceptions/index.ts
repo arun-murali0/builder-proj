@@ -1,5 +1,5 @@
-import { AppError } from '../../shared/utils/error';
-import { CUSTOMCONFIG, HTTPCONFIG } from '../../interface/config/httpConfig';
+import { AppError } from "@/shared/utils/error";
+import { CUSTOMCONFIG, HTTPCONFIG } from "@/interface/config/httpConfig";
 
 export class DataBaseError extends AppError {
   constructor(message = CUSTOMCONFIG.INTERNAL_SERVER_ERROR) {

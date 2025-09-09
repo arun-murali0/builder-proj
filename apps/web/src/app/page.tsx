@@ -1,9 +1,10 @@
-import { Button } from "../components/ui/button";
+import Login from "@/components/login";
+
 const page = () => {
   return (
     <>
       <h1 className="text-6xl">hello world</h1>
-      <Button>click</Button>
+      <Login />
     </>
   );
 };

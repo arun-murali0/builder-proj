@@ -1,4 +1,4 @@
-import { Role, UserStatus } from '../../domain/types';
+import { Role, UserStatus } from "@/domain/types";
 
 // ----register-----
 export interface signUpInputDTO {

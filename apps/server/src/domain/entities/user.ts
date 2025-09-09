@@ -1,5 +1,5 @@
-import { Email, Password } from '../value-objects/userEntityObject';
-import { Role, UserStatus } from '../types';
+import { Email, Password } from "@/domain/value-objects/userEntityObject";
+import { Role, UserStatus } from "@/domain/types";
 
 export class User {
   private readonly id?: string;
@@ -32,14 +32,14 @@ export class User {
     this.mobileNumber = params.mobileNumber;
     this.firstName = params.firstName;
     this.lastName = params.lastName;
-    this.role = params.role ?? 'USER';
-    this.status = params.status ?? 'ACTIVE';
+    this.role = params.role ?? "USER";
+    this.status = params.status ?? "ACTIVE";
     this.createdAt = params.createdAt ?? new Date();
     this.updatedAt = params.updatedAt ?? new Date();
   }
 
   getId(): string {
-    if (!this.id) throw new Error('Id not found');
+    if (!this.id) throw new Error("Id not found");
     return this.id;
   }
 

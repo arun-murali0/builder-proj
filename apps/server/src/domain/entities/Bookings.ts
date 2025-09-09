@@ -1,4 +1,4 @@
-import { BookingStatus } from '../types';
+import { BookingStatus } from "@/domain/types";
 
 export class Booking {
   public readonly bookingId: string;
@@ -11,7 +11,7 @@ export class Booking {
   constructor(bookingId: string, amenityId: string, tenantId: string) {
     this.amenityId = amenityId;
     this.bookingId = bookingId;
-    this.status = 'pending';
+    this.status = "pending";
     this.tenantId = tenantId;
     this.startTime = new Date();
     this.endTime = new Date();
@@ -30,7 +30,7 @@ export class Booking {
   }
 
   set ChangeStatus(status: BookingStatus) {
-    this.status = status || 'pending';
+    this.status = status || "pending";
   }
 
   getBookingDurationInMinutes() {

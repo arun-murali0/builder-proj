@@ -4,8 +4,8 @@
     "experimentalDecorators": true,
     "rootDir": "src",
     "outDir": "dist",
-    "baseUrl": "src",
-    "paths": { "@/*": ["*"] },
+    "baseUrl": ".",
+    "paths": { "@/*": ["src/*"] },
     "allowSyntheticDefaultImports": true
   },
   "include": ["src"],

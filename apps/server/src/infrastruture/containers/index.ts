@@ -1,11 +1,11 @@
-import { SignUpUser } from '../../application/use-cases/index';
-import { UserMapper } from '../../application/mapper/userMapper';
-import { UserRepo } from '../database/repository/userRepo';
+import { SignUpUser } from "@/application/use-cases/index";
+import { UserMapper } from "@/application/mapper/userMapper";
+import { UserRepo } from "@/infrastruture/database/repository/userRepo";
 
 import {
   SignUpController,
   // SignInController,
-} from '../../interface/http/controllers/userController';
+} from "../../interface/http/controllers/userController";
 // import { AuthMapper } from '@application/mappers/AuthMapper';
 
 export const container = (() => {
